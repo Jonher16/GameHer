@@ -23,12 +23,15 @@ const RPS = () => {
     setChoice(choice);
     if (choice === 1){
       setImage(rock)
+      setChoice("Rock")
     }
     else if (choice=== 3) {
       setImage(scissors)
+      setChoice("Scissors")
     }
     else if (choice=== 2){
       setImage(paper)
+      setChoice("Paper")
     }
 
     var random_choice = getRandomInt(1, 3);
