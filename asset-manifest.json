@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/gameher/static/css/main.42341d2e.css",
+    "main.js": "/gameher/static/js/main.80406ecf.js",
+    "static/js/787.10ea8b41.chunk.js": "/gameher/static/js/787.10ea8b41.chunk.js",
+    "static/media/paper.png": "/gameher/static/media/paper.60c8f8b76c52b70b48d9.png",
+    "static/media/scissors.png": "/gameher/static/media/scissors.bd1d903ee4f10eee08e9.png",
+    "static/media/rock.png": "/gameher/static/media/rock.f80d60f1051f69ae5526.png",
+    "index.html": "/gameher/index.html",
+    "main.42341d2e.css.map": "/gameher/static/css/main.42341d2e.css.map",
+    "main.80406ecf.js.map": "/gameher/static/js/main.80406ecf.js.map",
+    "787.10ea8b41.chunk.js.map": "/gameher/static/js/787.10ea8b41.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42341d2e.css",
+    "static/js/main.80406ecf.js"
+  ]
+}
