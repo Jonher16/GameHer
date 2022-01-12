@@ -1,8 +1,10 @@
 $theme-colors: (
     "info": tomato,
     "danger": teal,
-    "primary": #4a45
+    "primary": #10d7f1
 );
+
+$font-weight-normal: bold;
 
 .root {
     background: linear-gradient(0deg, #0C79F7 30%, #88BFFE 70%);
@@ -14,5 +16,6 @@ $theme-colors: (
     align-items: center;
     margin: 0;
   }
+
 
 @import "~bootstrap/scss/bootstrap";
