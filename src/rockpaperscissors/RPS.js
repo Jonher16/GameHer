@@ -3,7 +3,7 @@ import scissors from "./img/scissors.png";
 import rock from "./img/rock.png";
 import paper from "./img/paper.png"
 import PlayerDisplay from "./PlayerDisplay";
-import { Button } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 const RPS = () => {
 
@@ -94,7 +94,7 @@ const RPS = () => {
     e.preventDefault()
 
     var clicks = prevclicks
-    clicks+=100
+    clicks+=sims
     setClicks(clicks)
 
     var draws = prevdraws;
@@ -161,6 +161,11 @@ const RPS = () => {
     setDrawp((draws*100/clicks).toFixed(2))
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+  }
+
   const [choice, setChoice] = useState(" ");
   const [choice2, setChoice2] = useState("");
   const [draws, setDraws] = useState(0);
@@ -172,36 +177,56 @@ const RPS = () => {
   const [image, setImage]= useState(rock)
   const [image2, setImage2] = useState(rock)
   const [clicks, setClicks] = useState(0)
+  const [name, setName] = useState("Player 1")
+  const [inv, setInv] = useState(false)
 
   return (
     <div className="d-inline-flex flex-column h-100 w-75 align-items-center">
       <h1>Rock Paper Scissors</h1>
+      <div className="form-group">
+      <label htmlFor="formGroupExampleInput">Enter your name:</label>
+       <input
+        type="text"
+        className="form-control"
+        id="formGroupExampleInput"
+        value={name}
+        onChange={(e)=>setName(e.target.value)}
+      />
+    </div>
       <div className="d-inline-flex flex-row h-50 w-75 mt-5 border border-secondary rounded pt-5">
-        <PlayerDisplay img={image} player={"Player 1"} choice={choice} />
+        <PlayerDisplay img={image} player={name} choice={choice} />
         <PlayerDisplay img={image2} player={"Computer"} choice={choice2} />
       </div>
       {/* Button Div */}
-      <div className="d-inline-flex flex-row justify-content-around w-50 mt-3">
-        <Button className="btn w-25" onClick={(e) => handleChoice(e, 1, clicks, wins, draws, losses)}>
+      <Container fluid className="d-inline-flex flex-row justify-content-around w-50 mt-3 border">
+        <Row xs={12} md={4} className="w-100 h-100 border" >
+          <Col>
+        <Button className="btn w-100" onClick={(e) => handleChoice(e, 1, clicks, wins, draws, losses)}>
           Rock
         </Button>
-        <Button className="btn w-25" onClick={(e) => handleChoice(e, 2, clicks, wins, draws, losses)}>
+        </Col>
+        <Col>
+        <Button className="btn w-100" onClick={(e) => handleChoice(e, 2, clicks, wins, draws, losses)}>
           Paper
         </Button>
-        <Button className="btn w-25" onClick={(e) => handleChoice(e, 3, clicks, wins, draws, losses)}>
+        </Col>
+        <Col>
+        <Button className="btn w-100" onClick={(e) => handleChoice(e, 3, clicks, wins, draws, losses)}>
           Scissors
         </Button>
-      </div>
-      <Button className="btn mt-5 w-25" onClick={(e) => experiment(e, clicks, wins, draws, losses, 100)}>
+        </Col>
+        </Row>
+      </Container>
+      <Button className="btn mt-3 mb-3 w-25" onClick={(e) => experiment(e, clicks, wins, draws, losses, 100)}>
           Simulate 100
         </Button>
-      <div className="d-inline-flex flex-row justify-content-around w-100 mt-5">
+        <h3>Clicks: {clicks}</h3>
+      <div className="d-inline-flex flex-row justify-content-around w-100 mt-2">
       <h3>Wins: {wins}</h3>
       <h3>Draws: {draws}</h3>
       <h3>Losses: {losses}</h3>
       </div>
-      <div className="d-inline-flex flex-row justify-content-around w-100 mt-5">
-      <h3>Clicks: {clicks}</h3>
+      <div className="d-inline-flex flex-row justify-content-around w-100 mt-1">
       <h3>Win %: {winp}%</h3>
       <h3>Draw %: {drawp}%</h3>
       <h3>Loss %: {lossp}%</h3>

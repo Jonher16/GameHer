@@ -20,8 +20,8 @@ $font-weight-normal: bold;
 .board {
   border: 4px solid darkblue !important;
 	border-radius: 10px !important;
-	width: 250px !important;
-	height: 250px !important; 
+	width: 400px !important;
+	height: 400px !important; 
 	margin: 0 auto !important;
 	display: grid !important;
 	grid-template: repeat(3, 1fr) / repeat(3, 1fr) !important;
