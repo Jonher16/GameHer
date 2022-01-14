@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import Board from "./Board";
 
-const TTT = () => {
+const TTT = ({name}) => {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [games, setGames] = useState({ wins: 0, draws: 0, losses: 0 });
   const [percentages, setPercentages] = useState({

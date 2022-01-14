@@ -5,7 +5,7 @@ import paper from "./img/paper.png"
 import PlayerDisplay from "./PlayerDisplay";
 import { Button, Col, Container, Row } from "react-bootstrap";
 
-const RPS = () => {
+const RPS = ({name}) => {
 
   const handleChoice = (e, choice, prevclicks, prevwins, prevdraws, prevlosses) => {
     
@@ -177,29 +177,18 @@ const RPS = () => {
   const [image, setImage]= useState(rock)
   const [image2, setImage2] = useState(rock)
   const [clicks, setClicks] = useState(0)
-  const [name, setName] = useState("Player 1")
   const [inv, setInv] = useState(false)
 
   return (
     <div className="d-inline-flex flex-column h-100 w-75 align-items-center">
       <h1>Rock Paper Scissors</h1>
-      <div className="form-group">
-      <label htmlFor="formGroupExampleInput">Enter your name:</label>
-       <input
-        type="text"
-        className="form-control"
-        id="formGroupExampleInput"
-        value={name}
-        onChange={(e)=>setName(e.target.value)}
-      />
-    </div>
-      <div className="d-inline-flex flex-row h-50 w-75 mt-5 border border-secondary rounded pt-5">
+      <div className="d-inline-flex flex-row h-50 w-75 mt-3 border border-secondary rounded pt-5">
         <PlayerDisplay img={image} player={name} choice={choice} />
         <PlayerDisplay img={image2} player={"Computer"} choice={choice2} />
       </div>
       {/* Button Div */}
-      <Container fluid className="d-inline-flex flex-row justify-content-around w-50 mt-3 border">
-        <Row xs={12} md={4} className="w-100 h-100 border" >
+      <Container fluid className="d-inline-flex flex-row justify-content-around w-50 mt-3">
+        <Row xs={12} md={4} className="w-100 h-100 justify-content-around" >
           <Col>
         <Button className="btn w-100" onClick={(e) => handleChoice(e, 1, clicks, wins, draws, losses)}>
           Rock
