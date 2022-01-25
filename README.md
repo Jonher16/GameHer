@@ -7,4 +7,4 @@ A simple multiple game web (WIP). The main idea is to first make it user-playabl
 ### `Tic Tac Toe`
 
 ## WIP Games
-
+### `Simon`
