@@ -36,5 +36,49 @@ $font-weight-normal: bold;
 	outline: none;
 }
 
+.simonblue {
+  background: blue !important;
+	border: 2px solid blue !important;
+	font-size: 40px !important;
+	font-weight: 800;
+	cursor: pointer;
+	outline: none;
+}
+
+.simonred {
+  background: red !important;
+	border: 2px solid red !important;
+	font-size: 40px !important;
+	font-weight: 800;
+	cursor: pointer;
+	outline: none;
+}
+
+.simongreen {
+  background: green !important;
+	border: 2px solid green !important;
+	font-size: 40px !important;
+	font-weight: 800;
+	cursor: pointer;
+	outline: none;
+}
+
+.simonyellow {
+  background: yellow !important;
+	border: 2px solid yellow !important;
+	font-size: 40px !important;
+	font-weight: 800;
+	cursor: pointer;
+	outline: none;
+}
+
+.simonblank {
+  background: white !important;
+	border: 2px solid black !important;
+	font-size: 40px !important;
+	font-weight: 800;
+	cursor: pointer;
+	outline: none;
+}
 
 @import "~bootstrap/scss/bootstrap";
