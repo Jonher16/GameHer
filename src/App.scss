@@ -81,4 +81,31 @@ $font-weight-normal: bold;
 	outline: none;
 }
 
+.snakeframe {
+	position: relative !important;
+	margin: 30px auto !important;
+	width: 600px !important;
+	height: 600px !important;
+	border: 2px solid black !important;
+}
+
+.snakedot {
+	position: absolute !important;
+	width: 2% !important;
+	height: 2% !important;
+	background-color: black !important;
+	border: 1px solid rgb(0, 195, 255) !important;
+
+}
+
+.snakefood {
+	position: absolute;
+	width: 2%;
+	height: 2%;
+	background: red;
+	border: 1px solid #fff;
+	z-index: 1;
+  }
+
+
 @import "~bootstrap/scss/bootstrap";

@@ -2,6 +2,7 @@ import './App.scss';
 import TTT from "./tictactoe/TTT"
 import RPS from "./rockpaperscissors/RPS"
 import Simon from "./simon/Simon"
+import Snake from "./snake/Snake"
 import { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 function App() {
@@ -38,10 +39,11 @@ function App() {
           <option value="RPS">Rock Paper Scissors</option>
           <option value="TTT">Tic Tac Toe</option>
           <option value="Simon">Simon</option>
+          <option value="Snake">Snake</option>
         </Form.Select>
         </Form>
         <Button className="mt-3" onClick={(e)=>handleSubmit(e)}>GO! Start Game</Button>
-    </div>) : (game === "TTT" ? (<TTT name={name} />) : (game === "RPS" ? (<RPS name={name} />) : <Simon />))  }
+    </div>) : (game === "TTT" ? (<TTT name={name} />) : (game === "RPS" ? (<RPS name={name} />) : (game === "simon" ? <Simon /> : <Snake />)))  }
     </div>
   );
 }
