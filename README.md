@@ -5,6 +5,7 @@ A simple multiple game web (WIP). The main idea is to first make it user-playabl
 
 ### `Rock Paper Scissors`
 ### `Tic Tac Toe`
+### `Simon`
 
 ## WIP Games
-### `Simon`
+### `Snake`
