@@ -43,7 +43,7 @@ function App() {
         </Form.Select>
         </Form>
         <Button className="mt-3" onClick={(e)=>handleSubmit(e)}>GO! Start Game</Button>
-    </div>) : (game === "TTT" ? (<TTT name={name} />) : (game === "RPS" ? (<RPS name={name} />) : (game === "simon" ? <Simon /> : <Snake />)))  }
+    </div>) : (game === "TTT" ? (<TTT name={name} />) : (game === "RPS" ? (<RPS name={name} />) : (game === "Simon" ? <Simon name={name}/> : <Snake name={name} />)))  }
     </div>
   );
 }

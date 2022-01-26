@@ -4,7 +4,7 @@ import timeout from "../simon/utils";
 import SnakeFood from "./SnakeFood";
 import SnakeObj from "./SnakeObj";
 
-const Snake = () => {
+const Snake = ({name}) => {
 
   function useInterval(callback, delay) {
     const savedCallback = useRef();
@@ -171,7 +171,7 @@ const Snake = () => {
         <SnakeFood dot={food} />
       </div>
       <h2>Score: {score}</h2>
-      <h2>High Score: {highscore}</h2>
+      <h2>{name}'s high Score: {highscore}</h2>
       {start ? "" : (<Button className="simonyellow" onClick={(e) => startGame(e)}>
           Start Game
         </Button>)}

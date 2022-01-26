@@ -4,7 +4,7 @@ import buzzer from "./buzzer.mp3";
 import correct from "./correct.mp3"
 import timeout from "./utils";
 
-const Simon = () => {
+const Simon = ({name}) => {
   const [simon, setSimon] = useState([false, false, false, false]);
   const [chain, setChain] = useState([]);
   const [userChain, setUserChain] = useState([]);
@@ -162,7 +162,7 @@ const Simon = () => {
           )}
         </div>
       </div>
-      <h3>Longest Streak: {long}</h3>
+      <h3>{name}'s longest Streak: {long}</h3>
       {start ? (
         ""
       ) : (
