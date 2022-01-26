@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import buzzer from "./buzzer.mp3";
 import correct from "./correct.mp3"
+import timeout from "./utils";
 
 const Simon = () => {
   const [simon, setSimon] = useState([false, false, false, false]);
@@ -9,15 +10,7 @@ const Simon = () => {
   const [userChain, setUserChain] = useState([]);
   const [userTurn, setUserTurn] = useState(false);
   const [start, setStart] = useState(false);
-
-  function pauseComp(ms) 
- {
-     var curr = new Date().getTime();
-     ms += curr;
-     while (curr   < ms) {
-         curr = new Date().getTime();
-     }
- } 
+  const [long, setLong] = useState("0")
 
   function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -25,11 +18,11 @@ const Simon = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  function wait(ms) {
-    var start = Date.now(),
-      now = start;
-    while (now - start < ms) {
-      now = Date.now();
+  function checkLongStreak(){
+    let tempchain = chain
+    let templong = long
+    if (chain.length > long){
+      setLong(chain.length)
     }
   }
 
@@ -47,17 +40,8 @@ const Simon = () => {
     temparray[number] = true;
     //console.log(temparray)
     //console.log(temparray[number])
-    setSimon(temparray);
+    animation([number])
   };
-
-  useEffect(() => {
-    // console.log("Simon => ",simon)
-    const timeout = setTimeout(() => {
-      //console.log("timecheck")
-      setSimon([false, false, false, false]);
-    }, 200);
-    return () => clearTimeout(timeout);
-  }, [simon]);
 
   const startGame = (e) => {
     e.preventDefault();
@@ -70,11 +54,7 @@ const Simon = () => {
     console.log("random, ", random);
     var tempchain = [random];
     setChain(tempchain);
-    let tempsimon = [false, false, false, false];
-    for (let i = 0; i < tempchain.length; i++) {
-      tempsimon[tempchain[i]] = true;
-      setSimon(tempsimon);
-    }
+    animation(tempchain)
     setUserTurn(true);
   };
 
@@ -116,21 +96,30 @@ const Simon = () => {
     if (tempuserturn === false) {
       let isSame = checkChains();
       if (isSame === true) {
+        checkLongStreak()
         setUserChain([]);
         let random = getRandomInt(0, 3);
         console.log("random ", random);
         let tempchain = chain;
         tempchain.push(random);
-        let tempsimon = [false, false, false, false];
-        for (let i = 0; i < tempchain.length; i++) {
-          
-          tempsimon[tempchain[i]] = true;
-          setSimon(tempsimon);
-        }
+        animation(tempchain)
         setUserTurn(true);
       }
     }
   }, [userTurn]);
+
+  async function animation(tempchain){
+    let len = tempchain.length
+    for(let i=0; i<len;i++){
+    let tempsimon = [false, false, false, false];
+    tempsimon[tempchain[i]] = true;
+    setSimon(tempsimon)
+    await timeout(500)
+    setSimon([false, false, false, false])
+    await timeout(200)
+    }
+    return
+  }
 
   return (
     <div className="d-inline-flex flex-column h-100 w-100 align-items-center mt-3">
@@ -173,6 +162,7 @@ const Simon = () => {
           )}
         </div>
       </div>
+      <h3>Longest Streak: {long}</h3>
       {start ? (
         ""
       ) : (
