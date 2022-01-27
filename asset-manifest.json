@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/gameher/static/css/main.e0c3082f.css",
-    "main.js": "/gameher/static/js/main.2f559a02.js",
+    "main.css": "/gameher/static/css/main.24611723.css",
+    "main.js": "/gameher/static/js/main.5ca990fc.js",
     "static/js/787.10ea8b41.chunk.js": "/gameher/static/js/787.10ea8b41.chunk.js",
     "static/media/paper.png": "/gameher/static/media/paper.60c8f8b76c52b70b48d9.png",
     "static/media/scissors.png": "/gameher/static/media/scissors.bd1d903ee4f10eee08e9.png",
     "static/media/rock.png": "/gameher/static/media/rock.f80d60f1051f69ae5526.png",
+    "static/media/hang.png": "/gameher/static/media/hang.631d8afb90d67d3c9a5c.png",
     "static/media/buzzer.mp3": "/gameher/static/media/buzzer.b3b1f378875a81aa7e1b.mp3",
     "static/media/correct.mp3": "/gameher/static/media/correct.fe387308366852159864.mp3",
+    "static/media/head.png": "/gameher/static/media/head.457de1865b2a212d0005.png",
     "index.html": "/gameher/index.html",
-    "main.e0c3082f.css.map": "/gameher/static/css/main.e0c3082f.css.map",
-    "main.2f559a02.js.map": "/gameher/static/js/main.2f559a02.js.map",
+    "main.24611723.css.map": "/gameher/static/css/main.24611723.css.map",
+    "main.5ca990fc.js.map": "/gameher/static/js/main.5ca990fc.js.map",
     "787.10ea8b41.chunk.js.map": "/gameher/static/js/787.10ea8b41.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0c3082f.css",
-    "static/js/main.2f559a02.js"
+    "static/css/main.24611723.css",
+    "static/js/main.5ca990fc.js"
   ]
 }
