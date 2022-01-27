@@ -6,6 +6,7 @@ A simple minigame web (WIP).
 ### `Rock Paper Scissors`
 ### `Tic Tac Toe`
 ### `Simon`
+### `Snake`
 
 ## WIP Games
-### `Snake`
+### `Hangman`
