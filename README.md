@@ -1,4 +1,4 @@
-# Minigame Game Web
+# GameHer
 A simple minigame web (WIP).
 
 ## Available Games
