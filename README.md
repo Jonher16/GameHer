@@ -7,6 +7,7 @@ A simple minigame web (WIP).
 ### `Tic Tac Toe`
 ### `Simon`
 ### `Snake`
+### `Hangman`
 
 ## WIP Games
-### `Hangman`
+
